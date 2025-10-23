@@ -28,7 +28,7 @@ const Doners = () => {
       console.log(error);
     }
   };
-  
+
 
   const columns = [
     { field: "_id", headerName: "ID", width: 90 },
@@ -44,7 +44,7 @@ const Doners = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/admin/doner/${params.row._id}`}>
+            <Link to={`/admin/donor/${params.row.id}`}>
               <button className="bg-gray-400 text-white cursor-pointer w-[70px]">
                 Edit
               </button>
@@ -69,6 +69,15 @@ const Doners = () => {
       },
     },
   ];
+  const rows = [
+    {
+      id: 1,
+      name: "Laura Moser",
+      address: "Huston, downtown",
+      bloodType: 'O-',
+      disease: "None",
+    }
+  ]
 
   return (
     <div className="w-[70vw]">
@@ -85,8 +94,8 @@ const Doners = () => {
         <DataGrid
           columns={columns}
           checkboxSelection
-          getRowId={(row) => row._id}
-          rows={donors}
+          getRowId={(row) => row.id}
+          rows={rows}
         />
         ;
       </div>
