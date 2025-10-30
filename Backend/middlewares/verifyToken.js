@@ -3,16 +3,16 @@ const jwt = require("jsonwebtoken");
 dotenv.config();
 
 const verifyToken = (req, res, next) => {
-  const authHeader = req.headers.token;
+  const authHeader = req.headers.authorization; // ✅ بدّل token بـ authorization
   if (authHeader) {
-    const token = authHeader.split("")[1];
+    const token = authHeader.split(" ")[1]; // ✅ خليها تفصل بمسافة
     jwt.verify(token, process.env.JWT_SEC, (err, user) => {
-      if (err) res.status(403).json("Token is not valid");
+      if (err) return res.status(403).json("Token is not valid!");
       req.user = user;
       next();
     });
   } else {
-    res.status(401).json("You are not authenticated.");
+    res.status(401).json("You are not authenticated!");
   }
 };
 
@@ -26,5 +26,4 @@ const verifyTokenAndAuthorization = (req, res, next) => {
   });
 };
 
-
-module.exports = {verifyTokenAndAuthorization, verifyToken}
+module.exports = { verifyToken, verifyTokenAndAuthorization };

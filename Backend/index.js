@@ -14,3 +14,6 @@ app.listen(PORT,()=>{
     dbConnection();
 
 })
+app.get("/", (req, res) => {
+  res.send("Backend is working fine!");
+});

@@ -12,7 +12,7 @@ const createDonor= async (req,res)=>{
 };
 
 //get all donors
-const getAlldonor=async(req,res)=>{
+const getAlldonors=async(req,res)=>{
     try{
         const donors=await Donor.find().sort({createdAt:-1});
         res.status(200).json(donors);
@@ -74,4 +74,4 @@ const getDonorStats=async(req,res)=>{
     }
 };
 
-module.exports = {createDonor,getAlldonor,updateDonor,getOneDonor,deleteDonor,getDonorStats};
+module.exports = {createDonor,getAlldonors,updateDonor,getOneDonor,deleteDonor,getDonorStats};

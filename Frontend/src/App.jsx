@@ -2,12 +2,12 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Admin from "./pages/Admin"
-import Doners from "./pages/Doners"
-import Prospect from "./pages/prospect"
+import Donors from "./pages/Donors"
+import Prospect from "./pages/Prospect"
 import Prospects from "./pages/Prospects"
 import Menu from "./components/Menu"
 import NewDonor from "./pages/NewDonor"
-import Donor from "./pages/Doner"
+import Donor from "./pages/Donor"
 
 
 
@@ -48,8 +48,8 @@ function App() {
             element: <Admin />
           },
           {
-            path: "/admin/doners",
-            element: <Doners />
+            path: "/admin/donors",
+            element: <Donors />
 
           },
           {

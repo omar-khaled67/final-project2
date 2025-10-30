@@ -37,11 +37,11 @@ function Menu() {
         </Link>
 
         <hr className='w-full border-gray-300 my-[20px]' />
-        <Link to="/admin/doners" onClick={() => handleactiveLink("/admin/doners")}>
+        <Link to="/admin/donors" onClick={() => handleactiveLink("/admin/donors")}>
           <li className={`flex items-center text-[20px] cursor-pointer mt-[20px] transition-colors duration-100 font-semibold
-          ${activeLink === "/admin/doners" ? "bg-red-300 p-[10px] text-white" : ""} `}>
+          ${activeLink === "/admin/donors" ? "bg-red-300 p-[10px] text-white" : ""} `}>
 
-            <FaBox className={`mr-[15px] ${activeLink === "/admin/doners" ? "text-red-50" : "text-red-500"}`} />Doners</li>
+            <FaBox className={`mr-[15px] ${activeLink === "/admin/donors" ? "text-red-50" : "text-red-500"}`} />Donors</li>
         </Link>
 
         <Link to="/admin/prospects" onClick={() => handleactiveLink("/admin/prospects")}>
